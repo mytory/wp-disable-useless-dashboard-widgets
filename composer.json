@@ -1,0 +1,25 @@
+{
+  "name": "mytory/wp-mytory-disable-useless-dashboard-widget",
+  "description": "대시보드에 등장하는 PHP 버전업 알림, 사이트 건강, 워드프레스 이벤트 제거",
+  "keywords": [
+    "wordpress",
+    "tool"
+  ],
+  "authors": [
+    {
+      "name": "An, Hyeong-woo",
+      "email": "mytory@gmail.com"
+    }
+  ],
+  "repositories": [
+  ],
+  "type": "library",
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mytory\\WpDisableUselessDashboardWidget\\": "src/"
+    }
+  }
+}
