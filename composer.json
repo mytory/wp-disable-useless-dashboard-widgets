@@ -1,5 +1,5 @@
 {
-  "name": "mytory/wp-mytory-disable-useless-dashboard-widgets",
+  "name": "mytory/wp-disable-useless-dashboard-widgets.git",
   "description": "대시보드에 등장하는 PHP 버전업 알림, 사이트 건강, 워드프레스 이벤트 제거",
   "keywords": [
     "wordpress",
