@@ -1,23 +1,22 @@
 <?php
-namespace Mytory\WpDisableUselessDashboardWidget;
+namespace Mytory\WpDisableUselessDashboardWidgets;
 /**
  * Mytory Board의 확장팩 성격의 좋아요 모듈.
  * Class MytoryLike
  */
 class Disable {
 	public function __construct() {
-		add_action( 'wp_head', [ $this, 'ajax_variable' ] );
+		add_action( 'wp_dashboard_setup', [ $this, 'disable' ] );
 	}
 
-	public function ajax_variable() {
-		global $wp_query;
-		?>
-		<script type="text/javascript">
-            window.mytory_ajax = {
-                ajax_url: <?= json_encode( admin_url( "admin-ajax.php" ) ); ?>,
-                ajax_nonce: <?= json_encode( wp_create_nonce( "mytory-like-ajax-nonce" ) ); ?>,
-                wp_debug: <?= defined( WP_DEBUG ) ? WP_DEBUG : 'false' ?>
-            };
-		</script><?php
-	}
+	public function disable() {
+        // PHP 버전업 경고
+		remove_meta_box( 'dashboard_php_nag', 'dashboard', 'normal' );
+
+		// 사이트 건강 체크
+		remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal' );
+
+		// 워드프레스 이벤트와 뉴스
+		remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+    }
 }
